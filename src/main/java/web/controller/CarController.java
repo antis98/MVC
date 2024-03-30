@@ -18,12 +18,7 @@ public class CarController {
     @GetMapping(value = {"/cars", "/cars.html"})
     public String getCar(@RequestParam(value = "count", defaultValue = "5") int count, ModelMap model) {
 
-        if (count > 5) {
-            count = 5;
-        }
-
         model.addAttribute("cars", carService.getCars(count));
-
         return "cars";
     }
 }

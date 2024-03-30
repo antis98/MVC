@@ -9,7 +9,7 @@ import java.util.List;
 @Component
 public class CarServiceImp implements CarService {
 
-    List<Car> cars;
+    private final List<Car> cars;
 
     public CarServiceImp() {
         cars = new ArrayList<>();
@@ -22,6 +22,11 @@ public class CarServiceImp implements CarService {
     }
 
     public List<Car> getCars(int count) {
+
+        if (count > 5) {
+            count = 5;
+        }
+
         return cars.subList(0, count);
     }
 }
