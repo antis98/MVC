@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import web.service.CarService;
 
 @Controller
-public class CarController {
+public class CarsController {
 
     private final CarService carService;
 
-    public CarController(CarService carService) {
+    public CarsController(CarService carService) {
         this.carService = carService;
     }
 
